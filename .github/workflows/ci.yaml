@@ -18,15 +18,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: Using lock fole
+      - name: Using lock file for install
         run: yarn install --frozen-lockfile
-      - name: test
+      - name: Testing the app
         run: yarn test
-      - name: format
+      - name: Formatting the project
         run: yarn prettier
-      - name: lint
+      - name: Lint all file
         run: yarn lint
-      - name: typescript
+      - name: Translate typescript to js
         run: yarn typescript
-      - name: build
-        run: yarn build --if-present
