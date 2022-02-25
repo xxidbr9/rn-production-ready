@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typescript": "tsc --project tsconfig.json --noEmit",
     "prettier": "prettier src -check",
-    "lint-staged": "lint-staged --config lint-staged.js",
+    "lint-staged": "lint-staged --allow-empty --config lint-staged.js",
     "husky-install": "husky install"
   },
   "dependencies": {
