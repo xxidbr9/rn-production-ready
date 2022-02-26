@@ -12,6 +12,7 @@
     "prettier": "prettier src -check",
     "pretty": "yarn lint && pretty-quick --staged",
     "lint-staged": "lint-staged --allow-empty --config lint-staged.js",
+    "link": "react-native link",
     "husky-install": "husky install",
     "prepare": "yarn husky-install",
     "prebuild:android": "npx mkdirp android/app/src/main/assets/ && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",

@@ -99,16 +99,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '200',
+    fontFamily: 'Airbnb Cereal App',
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 14,
+    fontWeight: 'normal',
+    fontFamily: 'Airbnb Cereal App',
   },
   highlight: {
     fontWeight: '700',
+    fontFamily: 'Airbnb Cereal App',
   },
 });
 
