@@ -17,6 +17,7 @@ import {
   Text,
   useColorScheme,
   View,
+  ViewStyle,
 } from 'react-native';
 
 import {
@@ -26,10 +27,11 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import useIsDark from './utils/hooks/useDark';
 
 const Section: React.FC<{
   title: string;
-}> = ({children, title}) => {
+}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -56,9 +58,9 @@ const Section: React.FC<{
 };
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useIsDark()
 
-  const backgroundStyle = {
+  const backgroundStyle: ViewStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
@@ -73,7 +75,7 @@ const App = () => {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Mantap Gas Cepet Banget">
+          <Section title="Mantap Gas">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
@@ -99,16 +101,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '200',
+    fontFamily: "Airbnb Cereal App",
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 14,
+    fontWeight: 'normal',
+    fontFamily: "Airbnb Cereal App",
   },
   highlight: {
     fontWeight: '700',
+    fontFamily: "Airbnb Cereal App",
   },
 });
 
