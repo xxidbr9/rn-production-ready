@@ -11,6 +11,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    'import/extensions': 0,
     'react/require-default-props': 0,
     '@typescript-eslint/no-use-before-define': ['error', { variables: false }],
     'import/no-unresolved': 'off',
