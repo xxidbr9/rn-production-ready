@@ -14,7 +14,7 @@
 - [ ] Exclusiveness on iOS
 - [ ] Hermes
 - [ ] Atomic
-- [ ] Luxon : for date
+- [ ] Dayjs : for date
 - [ ] Firebase Message for Notification
 - [ ] React Native Blur
 - [ ] React Native SVG
@@ -24,6 +24,7 @@
 - [ ] Custom Splash screen
 - [ ] Apps Icon
 - [ ] i18n
+- [ ] Skia Render
 
 
 
@@ -34,7 +35,7 @@
 - [X] Husky
 - [X] Commitlint
 - [ ] Custom commit lint
-- [ ] eslint
+- [X] eslint
 
 
 
@@ -43,8 +44,8 @@
 - [ ] Change App name and Build Name
 - [X] Build Android Debug
 - [ ] Build Android Production
-- [ ] Hermes Android
+- [X] Hermes Android
 - [ ] Auto Generates Keystore (Android)
 - [ ] Build iOS Debug
 - [ ] Build iOS Production
-- [ ] Hermes iOS
+- [X] Hermes iOS
