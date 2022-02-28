@@ -15,7 +15,8 @@
     "husky-install": "husky install",
     "prepare": "yarn husky-install",
     "prebuild:android": "npx mkdirp android/app/src/main/assets/ && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
-    "build:debug:android": "cd ./android && ./gradlew assembleDebug"
+    "build:debug:android": "cd ./android && ./gradlew assembleDebug",
+    "ios:prepare:install": "npx pod-install"
   },
   "dependencies": {
     "react": "17.0.2",
