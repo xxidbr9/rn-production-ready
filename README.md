@@ -18,14 +18,33 @@
 - [ ] Firebase Message for Notification
 - [ ] React Native Blur
 - [ ] React Native SVG
+- [ ] Deep Link
+- [ ] Responsive
+- [ ] Skelton Loader
+- [ ] Custom Splash screen
+- [ ] Apps Icon
+- [ ] i18n
 
 
-#### Testing
+
+#### Testing & CICD
 - [ ] Unit test using jest
 - [ ] e2e 
+- [X] CI
+- [X] Husky
+- [X] Commitlint
+- [ ] Custom commit lint
+- [ ] eslint
+
 
 
 #### BUILD
 - [ ] Versioning Apps Using package.json
 - [ ] Change App name and Build Name
-- [ ] CICD
+- [X] Build Android Debug
+- [ ] Build Android Production
+- [ ] Hermes Android
+- [ ] Auto Generates Keystore (Android)
+- [ ] Build iOS Debug
+- [ ] Build iOS Production
+- [ ] Hermes iOS

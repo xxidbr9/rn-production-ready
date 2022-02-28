@@ -10,8 +10,12 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "typescript": "tsc --project tsconfig.json --noEmit",
     "prettier": "prettier src -check",
+    "pretty": "yarn lint && pretty-quick --staged",
     "lint-staged": "lint-staged --allow-empty --config lint-staged.js",
-    "husky-install": "husky install"
+    "husky-install": "husky install",
+    "prepare": "yarn husky-install",
+    "prebuild:android": "npx mkdirp android/app/src/main/assets/ && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build:debug:android": "cd ./android && ./gradlew assembleDebug"
   },
   "dependencies": {
     "react": "17.0.2",
@@ -41,6 +45,11 @@
   },
   "resolutions": {
     "@types/react": "^17"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty"
+    }
   },
   "jest": {
     "preset": "react-native",
