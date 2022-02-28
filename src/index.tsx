@@ -1,120 +1,152 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React from 'react';
+import React from 'react'
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  Text,
+  SafeAreaView,
+  TextStyle,
   ViewStyle,
-} from 'react-native';
+  TouchableOpacity,
+} from 'react-native'
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import useIsDark from './utils/hooks/useDark';
-
-const Section: React.FC<{
-  title: string;
-}> = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark';
+const Home: React.FC = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App = () => {
-  const isDarkMode = useIsDark()
-
-  const backgroundStyle: ViewStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Mantap Gas">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <SafeAreaView>
+      <Container style={[baseStyle]}>
+        <View>
+          <Text style={[titleStyle]}>Perjalanan</Text>
+          <Hr style={[breakStyle]} />
+          <View style={[boxStyle]}>
+            <Text style={[textSubTitle]}>
+              Belum ada perjalanan yang dipesan!
+            </Text>
+            <Text style={[textBody]}>
+              Saatnya menyiapkan tasmu dan mulai merencanakan petualanganmu
+              berikutnya
+            </Text>
+          </View>
+          <View style={[btnWrapperStyle]}>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              // onPress={() => console.log('babi kau')}
+            >
+              <Text style={[buttonStyle]}>Mulai mencari</Text>
+            </TouchableOpacity>
+          </View>
+          <Hr style={[breakStyle]} />
+          <View>
+            <Text style={[textSmallBody]}>
+              Tidak bisa menemukan reservasi Anda di sini?{' '}
+              <Text style={[textUnderScore]}>Kunjungi Pusat Bantuan</Text>
+            </Text>
+          </View>
         </View>
-      </ScrollView>
+      </Container>
     </SafeAreaView>
-  );
-};
+  )
+}
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '200',
-    fontFamily: "Airbnb Cereal App",
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 14,
-    fontWeight: 'normal',
-    fontFamily: "Airbnb Cereal App",
-  },
-  highlight: {
-    fontWeight: '700',
-    fontFamily: "Airbnb Cereal App",
-  },
-});
+const btnWrapperStyle: ViewStyle = {
+  alignSelf: 'flex-start',
+  marginTop: 16,
+}
 
-export default App;
+const textStyle: TextStyle = {
+  fontFamily: 'Airbnb Cereal App',
+  color: 'black',
+}
+
+const titleStyle: TextStyle = {
+  ...textStyle,
+  fontSize: 24,
+  lineHeight: 24 * 1.5,
+  fontWeight: '600',
+}
+
+const baseStyle: ViewStyle = {
+  marginTop: 40,
+}
+
+const boxStyle: ViewStyle = {
+  marginTop: 8,
+}
+
+const textSubTitle: TextStyle = {
+  ...textStyle,
+  fontSize: 18,
+  lineHeight: 18 * 1.3,
+  fontWeight: '500',
+}
+
+const textBody: TextStyle = {
+  ...textStyle,
+  opacity: 0.7,
+  paddingTop: 8,
+  fontSize: 14,
+  lineHeight: 14 * 1.5,
+}
+
+const textSmallBody: TextStyle = {
+  ...textStyle,
+  opacity: 0.7,
+  paddingTop: 8,
+  fontSize: 12,
+  lineHeight: 12 * 1.3,
+}
+
+const textUnderScore: TextStyle = {
+  ...textStyle,
+  opacity: 1,
+  textDecorationLine: 'underline',
+  fontWeight: '600',
+}
+
+const buttonStyle: TextStyle = {
+  ...textStyle,
+  borderRadius: 8,
+  paddingHorizontal: 16,
+  paddingVertical: 8,
+  borderWidth: 1,
+  borderColor: 'black',
+  fontWeight: '500',
+}
+
+const SPACE = 8
+
+const breakStyle: ViewStyle = {
+  marginVertical: SPACE,
+  paddingVertical: SPACE,
+}
+
+// Line
+
+type HrProps = {
+  style?: ViewStyle[]
+}
+
+const Hr: React.FC<HrProps> = ({ style }) => {
+  const oldStyle: ViewStyle = {
+    borderBottomColor: 'gray',
+    opacity: 0.4,
+    borderBottomWidth: 1,
+  }
+
+  const newStyle = style ? [oldStyle, ...style] : [oldStyle]
+
+  return <View style={newStyle} />
+}
+
+type ContainerProps = {
+  style?: ViewStyle[]
+}
+
+const Container: React.FC<ContainerProps> = ({ style, children }) => {
+  const newStyle = style ? [containerStyle, ...style] : [containerStyle]
+
+  return <View style={newStyle}>{children}</View>
+}
+
+const containerStyle: ViewStyle = {
+  paddingHorizontal: 24,
+}
+
+export default Home
